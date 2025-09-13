@@ -1,10 +1,7 @@
 import streamlit as st
-import json
 import uuid
 from datetime import datetime
-from dataclasses import dataclass, asdict
-from typing import List, Dict
-import hashlib
+from dataclasses import dataclass
 
 # Configure page
 st.set_page_config(
@@ -43,16 +40,12 @@ class QuestMaster:
             st.session_state.tasks = []
         if 'achievements' not in st.session_state:
             st.session_state.achievements = []
-        if 'device_id' not in st.session_state:
-            # Create a simple device identifier for persistence simulation
-            st.session_state.device_id = "default_device"
         if 'initialized' not in st.session_state:
             st.session_state.initialized = True
     
     def load_data(self):
-        """Load data from session state (simulating device persistence)"""
-        # In Streamlit, session state persists during the session
-        # This simulates device-specific persistence
+        """Load data from session state"""
+        # In Streamlit, session state persists during the browser session
         pass
     
     def save_data(self):
